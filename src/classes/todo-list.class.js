@@ -4,11 +4,13 @@
 export class TodoList{
 
     constructor(){
-        this.todos = [];
+        // this.todos = [];
+        this.cargarLocalStorage();
     }
 
     nuevoTodo(todo){
         this.todos.push (todo);
+        this.guardarLocalStorage();
     }
 
     eliminarTodo(id){
@@ -40,11 +42,18 @@ export class TodoList{
     }
 
     guardarLocalStorage(){
-        localStorage.setItem('todo', this.todos);
+        localStorage.setItem('todo', JSON.stringify(this.todos) );
     }
 
     cargarLocalStorage(){
+        
+        if(localStorage.getItem('todo')){
 
+        this.todo = JSON.parse(localStorage.getItem('todo'));
+
+        }else{
+            this.todos = [];
+        }
     }
 
 
