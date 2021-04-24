@@ -22,7 +22,6 @@ export class TodoList{
     marcarCompletado(id){
         
         for (const todo of this.todos){
-            console.log(id, todo.id);
 
             if(todo.id == id){
                 todo.completado = !todo.completado;
@@ -46,20 +45,10 @@ export class TodoList{
     }
 
     cargarLocalStorage(){
-        
-        // if(localStorage.getItem('todo')){
-
-        // this.todo = JSON.parse(localStorage.getItem('todo'));
-
-        // }else{
-        //     this.todos = [];
-        // }
 
         this.todos = (localStorage.getItem('todo'))
                         ? JSON.parse(localStorage.getItem('todo'))
                         :[];
     }
-
-
 
 }

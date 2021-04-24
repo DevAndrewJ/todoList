@@ -64,6 +64,7 @@ divTodoList.addEventListener('click', (event) => {
 });
 
 btnBorrar.addEventListener('click',() => {
+    
     todoList.eliminarCompletados();
     
     for(let i = divTodoList.children.length -1; 1 >= 0; i--){
